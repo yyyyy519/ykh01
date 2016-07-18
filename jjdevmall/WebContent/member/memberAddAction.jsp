@@ -36,7 +36,7 @@ try{
 
 	Class.forName(driver);
 	conn = DriverManager.getConnection(url,dbUser,dbPass);
-	
+	conn.setAutoCommit(false);
 	String sql1 = "INSERT INTO member(member_id, member_pw, member_name, member_sex, member_age) VALUES(?, ?, ?, ?, ?)";
 	stmt1 = conn.prepareStatement(sql1,Statement.RETURN_GENERATED_KEYS);
 	stmt1.setString(1,memberId);
@@ -54,12 +54,11 @@ try{
 	System.out.println("key: "+key);
 	int lastKey = 0;
 	String sql2 = "INSERT INTO address(member_no, member_address) VALUES(?,?)";
-	
 		stmt2 = conn.prepareStatement(sql2);
 		stmt2.setInt(1, lastKey);
 		stmt2.setString(2, memberAdr);
 		stmt2.executeUpdate();
-			
+	conn.commit();
 	}catch(Exception e) {
 		conn.rollback();		//이전 상태로 되돌리기(바로 이전 커밋 후까지)
 		e.printStackTrace();	//에러메시지 그대로 출력
