@@ -41,7 +41,7 @@
 %>
 		<tr>
 			<td><%= rs1.getInt("member_no") %></td>
-			<td><%= rs1.getString("member_id") %></td>
+			<td><a href="<%=request.getContextPath()%>/member/address.jsp"><%= rs1.getString("member_id") %></a></td>
 			<td><%= rs1.getString("member_pw") %></td>
 			<td><%= rs1.getString("member_name") %></td>
 			<td><%= rs1.getString("member_sex") %></td>
