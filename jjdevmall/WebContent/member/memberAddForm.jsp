@@ -22,6 +22,8 @@
 				$('#ageHelper').text('나이는 숫자만 가능합니다.');
 			}else if($('#memberAge').val()==''){
 				$('#ageHelper').text('나이를 입력하세요.');
+			}else if($('#memberAdr').val()==''){
+				$('#adrHelper').text('주소를 입력하세요.');
 			}else{
 				$('#addForm').submit();
 			}
@@ -30,7 +32,7 @@
 </script>
 </head>
 <body>
-<form id="addForm" action="./memberAddAction.jsp" method="post">
+<form id="addForm" action="<%=request.getContextPath()%>/member/memberAddAction.jsp" method="post">
 <h1>회원가입</h1>
 <table>
 	<tr>
@@ -60,6 +62,11 @@
 		<td>나이 : </td>
 		<td><input type="text" id="memberAge" name="memberAge"></td>
 		<td><samp id="ageHelper"></samp></td>
+	</tr>
+	<tr>
+		<td>주소 : </td>
+		<td><input type="text" id="memberAdr" name="memberAdr"></td>
+		<td><samp id="adrHelper"></samp></td>
 	</tr>
 	<tr>
 		<td colspan="2">
