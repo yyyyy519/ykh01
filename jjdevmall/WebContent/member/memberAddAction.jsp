@@ -22,7 +22,7 @@ System.out.println("memberSex: "+memberSex);
 System.out.println("memberAge: "+memberAge);
 
 String driver = "com.mysql.jdbc.Driver";
-String url = "jdbc:mysql://localhost:3306/jjdev?useUnicode=true&characterEncoding=euckr";
+String url = "jdbc:mysql://localhost:3306/jjdevmall?useUnicode=true&characterEncoding=utf-8";
 String dbUser = "root";
 String dbPass="java0000";
 
