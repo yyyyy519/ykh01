@@ -22,7 +22,6 @@
 	String url = "jdbc:mysql://localhost:3306/jjdevmall?useUnicode=true&characterEncoding=utf-8";
 	String dbUser = "root";
 	String dbPass="java0000";
-
 	Class.forName(driver);
 	connection = DriverManager.getConnection(url,dbUser,dbPass);
 	

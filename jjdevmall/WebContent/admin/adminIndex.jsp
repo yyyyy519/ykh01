@@ -25,7 +25,7 @@
 	String sessionMemberId = (String)session.getAttribute("sessionMemberId");
 	if(sessionMemberId == null){
 %>
-		<form id="adminLoginForm" action="/admin/member/adminLoginAction.jsp">
+		<form id="adminLoginForm" action="<%= request.getContextPath() %>/admin/member/adminLoginAction.jsp">
 		<table>
 			<tr>
 				<td>아이디 : </td>
