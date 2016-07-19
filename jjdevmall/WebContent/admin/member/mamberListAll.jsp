@@ -37,7 +37,7 @@
 			<td>나이</td>
 		</tr>
 <%
-	while(rs1.next()) {
+		while(rs1.next()) {
 %>
 		<tr>
 			<td><%= rs1.getInt("member_no") %></td>
