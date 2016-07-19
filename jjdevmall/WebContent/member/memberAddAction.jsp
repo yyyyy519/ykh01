@@ -59,15 +59,15 @@ try{
 		stmt2.setString(2, memberAdr);
 		stmt2.executeUpdate();
 	conn.commit();
-	}catch(Exception e) {
-		conn.rollback();		//이전 상태로 되돌리기(바로 이전 커밋 후까지)
-		e.printStackTrace();	//에러메시지 그대로 출력
-	}finally{
-		rs.close();
-		stmt1.close();
-		stmt2.close();
-		conn.close();
-	}
+}catch(Exception e) {
+	conn.rollback();		//이전 상태로 되돌리기(바로 이전 커밋 후까지)
+	e.printStackTrace();	//에러메시지 그대로 출력
+}finally{
+	rs.close();
+	stmt1.close();
+	stmt2.close();
+	conn.close();
+}
 %>
 </body>
 </html>
