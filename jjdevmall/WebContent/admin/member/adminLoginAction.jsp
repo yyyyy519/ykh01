@@ -13,10 +13,10 @@
 	ResultSet resultSet = null;
 	
 	request.setCharacterEncoding("UTF-8");
-	String loginId = request.getParameter("loginId");
-	String loginPw = request.getParameter("loginPw");
+	String adminLoginId = request.getParameter("adminLoginId");
+	String adminLoginPw = request.getParameter("adminLoginPw");
 	
-	System.out.println(loginId + " / " + loginPw);
+	System.out.println(adminLoginId + " / " + adminLoginPw);
 	
 	String driver = "com.mysql.jdbc.Driver";
 	String url = "jdbc:mysql://localhost:3306/jjdevmall?useUnicode=true&characterEncoding=utf-8";
@@ -28,8 +28,8 @@
 	
 	String sql = "SELECT member_id,member_pw from member where member_id=? AND member_pw=?";
 	statement = connection.prepareStatement(sql);
-	statement.setString(1, loginId);
-	statement.setString(2, loginPw);
+	statement.setString(1, adminLoginId);
+	statement.setString(2, adminLoginPw);
 	System.out.println(statement);
 	resultSet = statement.executeQuery();
 	
@@ -48,7 +48,7 @@
 	} finally {
 		
 	}
-	response.sendRedirect("/adminIndex.jsp");	//로그인성공,실패와 관련없이 index.jsp파일로 이동
+	response.sendRedirect(request.getContextPath()+"/admin/adminIndex.jsp");	//로그인성공,실패와 관련없이 index.jsp파일로 이동
 	System.out.println("로그인 성공 인덱스페이지로 이동");
 %>
 </body>

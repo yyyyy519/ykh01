@@ -8,7 +8,7 @@
 <body>
 <%
 	session.invalidate();	//세션삭제_로그아웃
-	response.sendRedirect(request.getContextPath()+"/admin/member/adminIndex.jsp");	//로그아웃 후 admin/index.jsp로 이동
+	response.sendRedirect(request.getContextPath()+"/admin/adminIndex.jsp");	//로그아웃 후 admin/index.jsp로 이동
 %>
 </body>
 </html>
